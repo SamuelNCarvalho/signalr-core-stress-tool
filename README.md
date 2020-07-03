@@ -7,10 +7,10 @@ A simple stress tool based on [QBurst ASP.NET tool](https://github.com/qburst/si
 In `Program.cs` change the connection configuration.
 
 ```c#
-instance.Init("http://localhost:5000/hub", async (connection) => {
-    await connection.InvokeAsync("Start");
-    await Task.Delay(60 * 1000);
-    await connection.InvokeAsync("Quit");
+instance.Init("http://localhost:5000/hubs", async (connection) => {
+    await connection.InvokeAsync("Hello");
+    await Task.Delay(1000);
+    await connection.InvokeAsync("Bye");
 });
 ```
 
