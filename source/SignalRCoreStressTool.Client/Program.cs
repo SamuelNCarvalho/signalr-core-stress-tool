@@ -24,9 +24,9 @@ namespace SignalRCoreStressTool.Client
             ConnectionManager instance = new ConnectionManager();
 
             instance.Init("http://localhost:5000/hubs", async (connection) => {
-                await connection.InvokeAsync("Start");
-                await Task.Delay(60 * 1000);
-                await connection.InvokeAsync("Quit");
+                await connection.InvokeAsync("Hello");
+                await Task.Delay(1000);
+                await connection.InvokeAsync("Bye");
             });
 
             instance.GenerateLoad(
